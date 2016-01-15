@@ -18,8 +18,8 @@ public class AddBrick : MonoBehaviour
     public float high = 0.1f;
     public float startDelay = 100f;
     public float typelDelay = 0.01f;
-    public Transform ParentPrefab = null;
-    public Transform TempPrefab;
+   // public Transform ParentPrefab = null;
+ //  public Transform TempPrefab;
 
     int[,] BrickTable = new int[5, 5] {{1,0,0,0,1},
                                       {1,1,1,1,1}, 
@@ -38,8 +38,10 @@ public class AddBrick : MonoBehaviour
                     Vector3 pos = new Vector3(x, high, y) * spacing;
                     GameObject a =(GameObject) Instantiate(prefab, pos, Quaternion.identity);
                     a.transform.parent = transform.parent;
+                    Debug.Log("FUCKKKBEGINGINGGLOOOP");
                     if (transform.GetComponent<Renderer>().enabled == false)
                     {
+                        Debug.Log("HELLOO BEGINGINGGLOOOP");
                         a.transform.GetChild(0).GetChild(0).GetComponent<Renderer>().enabled = false;
                         a.transform.GetChild(0).GetChild(1).GetComponent<Renderer>().enabled = false;
                         a.transform.GetChild(0).GetChild(2).GetComponent<Renderer>().enabled = false;
